@@ -13,8 +13,7 @@ package gs_ingress
 }
 
 template: {
-	// trait template can have multiple outputs in one trait
-	outputs: ingress: {
+	outputs: Ingress: {
 		apiVersion: "networking.k8s.io/v1beta1"
 		kind:       "Ingress"
 		metadata: {
@@ -45,9 +44,9 @@ template: {
 		http: [string]: int
 	}
 
-	context: {
-    name: "test"
-    namespace: "test"
-    revision: "11111"
+	context:{
+		name: string
+		namespace: string
+		revision: string
 	}
 }
